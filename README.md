@@ -1,4 +1,4 @@
-# CWORKS Website
+# CWORKS WEBSITE
 
 TEMPORARY SITE: https://trojannetwork.github.io/CWORKS/
 
