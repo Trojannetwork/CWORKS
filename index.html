@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CWORKS — a Kampala-based studio that builds websites and the web-adjacent services that come with them.">
+  <title>CWORKS — Web Studio, Kampala</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <script defer src="assets/js/nav.js"></script>
+  <script defer src="assets/js/reveal.js"></script>
+  <script defer src="assets/js/contact-form.js"></script>
+  <script defer src="assets/js/text-pressure.js"></script>
+  <script defer src="assets/js/gradual-blur.js"></script>
+  <script defer src="assets/js/magnet-lines.js"></script>
+  <script type="module" src="assets/js/beams.js"></script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <header class="site-header" id="top">
+    <div class="container">
+      <a href="#top" class="nav-wordmark">
+        cworks<span class="cursor"></span>
+      </a>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="explore-services.html">Explore Services</a>
+        <a href="#about">About</a>
+        <a href="#team">Team</a>
+        <a href="#contact" class="btn btn-primary">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== -->
+  <!--  Hero                -->
+  <!-- ==================== -->
+  <section class="hero-home reveal" id="hero">
+    <div id="beams-canvas" class="hero-canvas"></div>
+    <div class="hero-content">
+      <div id="text-pressure" class="hero-text-pressure"></div>
+      <div class="hero-cta-group">
+        <a href="explore-services.html" class="btn btn-white btn-large">See our work</a>
+        <a href="#contact" class="btn btn-outline btn-large" style="border-color: rgba(255,255,255,0.5); color: #fff;">Start a project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!-- ==================== -->
+  <!--  Services             -->
+  <!-- ==================== -->
+  <section class="services-section reveal" id="services">
+    <div class="container">
+      <div class="services-header">
+        <div class="services-eyebrow-row">
+          <span class="eyebrow">/ what we do</span>
+          
+        </div>
+        <h2 class="services-headline">We build &amp; maintain every part of your web presence.</h2>
+        <p class="services-intro">From design and code to hosting and ongoing support — one team handles it all, so you don't have to.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card-hero">
+          <div class="sc-number">01</div>
+          <div class="sc-icon">{ }</div>
+          <h3>Websites</h3>
+          <p>Marketing sites, portfolios, and storefronts — designed and built from scratch. Fast, clean, built to represent your business.</p>
+        </div>
+
+        <div class="service-card-hero">
+          <div class="sc-number">02</div>
+          <div class="sc-icon">&lt;/&gt;</div>
+          <h3>E‑commerce</h3>
+          <p>Full online stores with product catalogs, checkout, mobile money, card payments, and order management.</p>
+        </div>
+
+        <div class="service-card-hero">
+          <div class="sc-number">03</div>
+          <div class="sc-icon">~$</div>
+          <h3>Care &amp; Hosting</h3>
+          <p>Once it's live, we keep it fast, secure, and updated. Monitoring, backups, and fixes before you notice.</p>
+        </div>
+
+        <div class="service-card-hero">
+          <div class="sc-number">04</div>
+          <div class="sc-icon">@</div>
+          <h3>Domain &amp; Email</h3>
+          <p>Get a proper domain and professional email addresses. Set up correctly the first time.</p>
+        </div>
+
+        <div class="service-card-hero">
+          <div class="sc-number">05</div>
+          <div class="sc-icon">✦</div>
+          <h3>Ongoing Support</h3>
+          <p>Content changes, new pages, seasonal updates — we're here after launch, not just until the invoice clears.</p>
+        </div>
+
+        <div class="service-card-hero">
+          <div class="sc-number">06</div>
+          <div class="sc-icon">#</div>
+          <h3>SEO &amp; Performance</h3>
+          <p>Search engine foundations, fast-loading pages, and the technical setup that gets you found.</p>
+        </div>
+      </div>
+
+      <div class="services-cta">
+        <a href="explore-services.html" class="btn btn-signal btn-large">Explore services &amp; pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Process -->
+  <section class="section reveal" id="process">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">/ process</span>
+        <h2>How we work</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <span class="step-marker">[ 01 ]</span>
+          <h4>Understand</h4>
+          <p>We start with a short call about what you actually need, not a sales pitch.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-marker">[ 02 ]</span>
+          <h4>Build</h4>
+          <p>Design and development, with check-ins so there are no surprises at the end.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-marker">[ 03 ]</span>
+          <h4>Launch</h4>
+          <p>Your site goes live, tested across devices.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-marker">[ 04 ]</span>
+          <h4>Maintain</h4>
+          <p>We stay on to keep it running and current.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== -->
+  <!--  Why CWORKS / About  -->
+  <!-- ==================== -->
+  <section class="section why-section reveal" id="about">
+    <div class="container">
+      <span class="eyebrow">/ why us</span>
+      <blockquote>
+        We're a small team, so every project gets real attention — not a template with your logo swapped in. We write the code ourselves, we answer our own emails, and we stick around after launch.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- About body -->
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">/ about</span>
+        <h2>A small studio, built to last past launch day.</h2>
+      </div>
+      <div class="about-body">
+        <p>CWORKS started in Kampala with a simple frustration: most businesses either can't afford a proper website, or get one built and then have no one to call when something breaks. We build both the site and the relationship that keeps it working.</p>
+        <p>We keep the team small on purpose. It means the person who builds your site is the person who answers when you email us six months later.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Beliefs -->
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">/ approach</span>
+        <h2>What we believe</h2>
+        <div class="status-tag-row mt-md">
+          <span class="status-tag">// live</span>
+        </div>
+      </div>
+      <div class="beliefs">
+        <div class="belief-card">
+          <span class="belief-icon">{ }</span>
+          <h3>Built, not templated.</h3>
+          <p>Every site is written for the business it's for.</p>
+        </div>
+        <div class="belief-card">
+          <span class="belief-icon">&gt;&gt;</span>
+          <h3>Speed matters.</h3>
+          <p>Minimal, fast-loading pages — for your visitors and your search ranking.</p>
+        </div>
+        <div class="belief-card">
+          <span class="belief-icon">~$</span>
+          <h3>Launch is the start, not the finish.</h3>
+          <p>We stick around.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== -->
+  <!--  Team                -->
+  <!-- ==================== -->
+  <!-- TODO: Replace placeholder photos, names, roles, and bios with real team info before launch. -->
+  <section class="section reveal" id="team">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">/ team</span>
+        <h2>The people behind CWORKS.</h2>
+        <p class="subhead">Small team, direct access — no account managers standing between you and the people building your site.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-photo">[ Photo ]</div>
+          <div class="team-info">
+            <div class="team-name">[ Name ]</div>
+            <div class="team-role">Founder &amp; Lead Developer</div>
+            <p class="team-bio">[ What they actually do day to day ]</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo">[ Photo ]</div>
+          <div class="team-info">
+            <div class="team-name">[ Name ]</div>
+            <div class="team-role">[ Role ]</div>
+            <p class="team-bio">[ What they actually do day to day ]</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo">[ Photo ]</div>
+          <div class="team-info">
+            <div class="team-name">[ Name ]</div>
+            <div class="team-role">[ Role ]</div>
+            <p class="team-bio">[ What they actually do day to day ]</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo">[ Photo ]</div>
+          <div class="team-info">
+            <div class="team-name">[ Name ]</div>
+            <div class="team-role">[ Role ]</div>
+            <p class="team-bio">[ What they actually do day to day ]</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo">[ Photo ]</div>
+          <div class="team-info">
+            <div class="team-name">[ Name ]</div>
+            <div class="team-role">[ Role ]</div>
+            <p class="team-bio">[ What they actually do day to day ]</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-photo">[ Photo ]</div>
+          <div class="team-info">
+            <div class="team-name">[ Name ]</div>
+            <div class="team-role">[ Role ]</div>
+            <p class="team-bio">[ What they actually do day to day ]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ==================== -->
+  <!--  Contact             -->
+  <!-- ==================== -->
+  <!-- TODO: Replace the submit handler in contact-form.js with a real form endpoint
+       (e.g. Formspree) before launch. -->
+  <section class="contact-hero-intro reveal" id="contact">
+    <div class="container">
+      <span class="eyebrow">/ contact</span>
+      <h2>Let's talk about your project.</h2>
+      <p class="subhead">Fill in the form, or reach us directly — either works.</p>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="contact-layout">
+
+        <div>
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone <span style="font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="+256 …">
+            </div>
+            <div class="form-group">
+              <label for="project-type">Project type</label>
+              <select id="project-type" name="project-type">
+                <option value="" disabled selected>Select one…</option>
+                <option value="website">Website</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="hosting">Hosting &amp; maintenance</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your project…"></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary btn-large">Send message</button>
+            </div>
+          </form>
+
+          <div id="form-success" class="form-success">
+            <span class="success-icon">&#10003;</span>
+            <h3>Message sent</h3>
+            <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- TODO: Replace bracketed placeholders with real contact details before launch. -->
+        <aside class="contact-info">
+          <h3>Reach us directly</h3>
+          <div class="contact-detail">
+            <span class="detail-label">Email</span>
+            <span class="detail-value"><a href="mailto:hello@cworks.ug">hello@cworks.ug</a></span>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">Phone</span>
+            <span class="detail-value">[ your number ]</span>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-label">Location</span>
+            <span class="detail-value">Kampala, Uganda</span>
+          </div>
+          <div class="contact-socials">
+            <h4>Social</h4>
+            <div class="social-links">
+              <a href="#">Instagram</a>
+              <a href="#">LinkedIn</a>
+              <a href="#">X</a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== -->
+  <!--  CTA band            -->
+  <!-- ==================== -->
+  <section class="cta-band reveal">
+    <div class="container">
+      <h2>Have a project in mind?</h2>
+      <p class="subhead">Tell us what you're building. We'll tell you honestly if we're the right fit.</p>
+      <a href="#contact" class="btn btn-signal btn-large">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">
+        <a href="#top" class="nav-wordmark" style="color: var(--white);">
+          cworks<span class="cursor"></span>
+        </a>
+        <p>Web studio, Kampala</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-nav">
+          <h4>Sections</h4>
+          <a href="explore-services.html">Explore Services</a>
+          <a href="#about">About</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-nav">
+          <h4>Contact</h4>
+          <a href="mailto:hello@cworks.ug">hello@cworks.ug</a>
+          <a href="#">WhatsApp</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 CWORKS</span>
+        <span>[ maintained ]</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
