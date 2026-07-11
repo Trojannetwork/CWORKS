@@ -8,11 +8,12 @@
   if (!hero) return;
 
   /* ---- Config ---- */
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
   const config = {
     position: 'bottom',
-    strength: 2.5,
-    height: '10rem',
-    divCount: 6,
+    strength: isMobile ? 1.5 : 2.5,
+    height: isMobile ? '4rem' : '5rem',
+    divCount: isMobile ? 3 : 6,
     opacity: 1,
     curve: 'ease-out',
     exponential: false,
