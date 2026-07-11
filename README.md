@@ -1,5 +1,7 @@
 # CWORKS Website
 
+TEMPORARY SITE: https://trojannetwork.github.io/CWORKS/
+
 Static single-page landing site. HTML + CSS + vanilla JS. No build tools required.
 
 ## Run locally
