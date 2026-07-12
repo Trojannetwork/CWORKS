@@ -56,8 +56,11 @@
 
   container.appendChild(h1);
 
-  /* --- Sizing --- */
-  function setSize() {
+  /* --- Sizing and Cache positions --- */
+  let pageCenters = [];
+  let titleWidth = 0;
+
+  function setSizeAndCache() {
     const containerW = container.clientWidth;
     const newFontSize = Math.max(containerW / (chars.length / 2), MIN_FONT_SIZE);
     h1.style.fontSize = newFontSize + 'px';
@@ -75,14 +78,26 @@
           h1.style.lineHeight = yRatio;
         }
       }
+
+      // Cache span center coordinates relative to the page
+      const titleRect = h1.getBoundingClientRect();
+      titleWidth = titleRect.width;
+      pageCenters = spans.map(span => {
+        const r = span.getBoundingClientRect();
+        return {
+          element: span,
+          x: r.left + r.width / 2 + window.scrollX,
+          y: r.top + r.height / 2 + window.scrollY
+        };
+      });
     });
   }
 
-  setSize();
+  setSizeAndCache();
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(setSize, 100);
+    resizeTimer = setTimeout(setSizeAndCache, 100);
   });
 
   /* --- Mouse tracking --- */
@@ -106,47 +121,65 @@
   cursor.x = mouse.x;
   cursor.y = mouse.y;
 
-  /* --- Helpers --- */
-  function dist(a, b) {
-    const dx = b.x - a.x;
-    const dy = b.y - a.y;
-    return Math.sqrt(dx * dx + dy * dy);
-  }
-
   function getAttr(distance, maxDist, minVal, maxVal) {
     const val = maxVal - Math.abs((maxVal * distance) / maxDist);
     return Math.max(minVal, val + minVal);
   }
 
-  /* --- Animation loop --- */
+  /* --- Animation loop with scroll adjustments and visibility observer --- */
+  let isHeroVisible = true;
+  let animId = null;
+
   function animate() {
     // Ease mouse toward cursor
     mouse.x += (cursor.x - mouse.x) / 15;
     mouse.y += (cursor.y - mouse.y) / 15;
 
-    const titleRect = h1.getBoundingClientRect();
-    const maxDist = titleRect.width / 2;
+    const maxDist = titleWidth / 2 || 1;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
 
-    spans.forEach(span => {
-      if (!span) return;
-      const r = span.getBoundingClientRect();
-      const charCenter = { x: r.x + r.width / 2, y: r.y + r.height / 2 };
-      const d = dist(mouse, charCenter);
+    pageCenters.forEach(c => {
+      if (!c.element) return;
+      // Convert page-relative coordinates to client-relative (viewport relative)
+      const cx = c.x - scrollX;
+      const cy = c.y - scrollY;
+
+      // Distance from eased mouse client coords
+      const dx = mouse.x - cx;
+      const dy = mouse.y - cy;
+      const d = Math.sqrt(dx * dx + dy * dy);
 
       const wdth = width ? Math.floor(getAttr(d, maxDist, 5, 200)) : 100;
       const wght = weight ? Math.floor(getAttr(d, maxDist, 100, 900)) : 400;
       const italVal = italic ? getAttr(d, maxDist, 0, 1).toFixed(2) : 0;
 
-      span.style.fontVariationSettings = "'wght' " + wght + ", 'wdth' " + wdth + ", 'ital' " + italVal;
+      c.element.style.fontVariationSettings = "'wght' " + wght + ", 'wdth' " + wdth + ", 'ital' " + italVal;
 
       if (alpha) {
         const alphaVal = getAttr(d, maxDist, 0, 1).toFixed(2);
-        span.style.opacity = alphaVal;
+        c.element.style.opacity = alphaVal;
       }
     });
-
-    requestAnimationFrame(animate);
   }
 
-  animate();
+  function tick() {
+    if (!isHeroVisible) {
+      animId = null;
+      return;
+    }
+    animate();
+    animId = requestAnimationFrame(tick);
+  }
+
+  // Observe container visibility to pause the animation loop
+  const observer = new IntersectionObserver(([entry]) => {
+    isHeroVisible = entry.isIntersecting;
+    if (isHeroVisible && !animId) {
+      animId = requestAnimationFrame(tick);
+    }
+  }, { threshold: 0 });
+
+  observer.observe(container);
 })();
+

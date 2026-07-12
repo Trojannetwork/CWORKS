@@ -10,9 +10,9 @@
   /* ---- Config ---- */
   const config = {
     position: 'bottom',
-    strength: 2.5,
+    strength: 3.0,
     height: '10rem',
-    divCount: 6,
+    divCount: 3,
     opacity: 1,
     curve: 'ease-out',
     exponential: false,

@@ -17,6 +17,7 @@
   container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
   container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
 
+  const spans = [];
   for (let i = 0; i < total; i++) {
     const span = document.createElement('span');
     span.style.cssText =
@@ -27,25 +28,49 @@
       'transition:transform 0.12s ease-out;';
     span.style.setProperty('--rotate', '-10deg');
     container.appendChild(span);
+    spans.push(span);
   }
 
   section.style.position = 'relative';
   section.appendChild(container);
 
-  /* ---- Pointer tracking ---- */
-  const onPointerMove = (e) => {
-    const spans = container.querySelectorAll('span');
-    spans.forEach(span => {
+  /* ---- Cache positions to prevent layout thrashing ---- */
+  let centers = [];
+  function updateCenters() {
+    centers = spans.map(span => {
       const rect = span.getBoundingClientRect();
-      const cx = rect.x + rect.width / 2;
-      const cy = rect.y + rect.height / 2;
-      const b = e.clientX - cx;
-      const a = e.clientY - cy;
-      const c = Math.sqrt(a * a + b * b) || 1;
-      const r = ((Math.acos(b / c) * 180) / Math.PI) * (e.clientY > cy ? 1 : -1);
-      span.style.setProperty('--rotate', `${r}deg`);
+      return {
+        element: span,
+        x: rect.left + rect.width / 2 + window.scrollX,
+        y: rect.top + rect.height / 2 + window.scrollY
+      };
+    });
+  }
+
+  // Initial update
+  // Use requestAnimationFrame to ensure elements are rendered and layout is ready
+  requestAnimationFrame(updateCenters);
+
+  window.addEventListener('resize', updateCenters);
+
+  /* ---- Pointer tracking using cached positions ---- */
+  const onPointerMove = (e) => {
+    // If centers are not loaded yet, skip
+    if (!centers.length) return;
+
+    // e.pageX and e.pageY are page-relative, matching our cached coords
+    const mx = e.pageX;
+    const my = e.pageY;
+
+    centers.forEach(c => {
+      const b = mx - c.x;
+      const a = my - c.y;
+      const dist = Math.sqrt(a * a + b * b) || 1;
+      const r = ((Math.acos(b / dist) * 180) / Math.PI) * (my > c.y ? 1 : -1);
+      c.element.style.setProperty('--rotate', `${r}deg`);
     });
   };
 
   window.addEventListener('pointermove', onPointerMove);
 })();
+
