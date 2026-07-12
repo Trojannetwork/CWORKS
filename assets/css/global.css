@@ -10,6 +10,14 @@ body {
   background-color: #F5F4F0;
 }
 
+/* --- Grainient Animated Background --- */
+.grainient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* --- Typography --- */
 h1 {
   font-family: var(--font-display);

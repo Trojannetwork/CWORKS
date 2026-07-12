@@ -16,7 +16,8 @@
   <script type="importmap">
   {
     "imports": {
-      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "ogl": "https://unpkg.com/ogl@1.0.11/dist/ogl.module.js"
     }
   }
   </script>
@@ -27,8 +28,12 @@
   <script defer src="assets/js/gradual-blur.js"></script>
   <script defer src="assets/js/magnet-lines.js"></script>
   <script type="module" src="assets/js/beams.js"></script>
+  <script type="module" src="assets/js/grainient.js"></script>
 </head>
 <body>
+
+  <!-- Grainient animated background -->
+  <div class="grainient-bg" data-grainient></div>
 
   <!-- Nav -->
   <header class="site-header" id="top">
