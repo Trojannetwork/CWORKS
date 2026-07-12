@@ -135,6 +135,14 @@ h3 {
   color: var(--ink);
 }
 
+.nav-links a.btn {
+  color: var(--white);
+}
+
+.nav-links a.btn:hover {
+  color: var(--color-noir);
+}
+
 /* --- Buttons --- */
 .btn {
   display: inline-flex;

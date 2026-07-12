@@ -1,7 +1,7 @@
 /* === FAQ Page Specific Styles === */
 
 .hero-faq {
-  background: var(--navy);
+  background: linear-gradient(rgba(32, 57, 74, 0.96), rgba(32, 57, 74, 0.96)), url('../images/faq.jpeg') no-repeat center center / cover;
   color: var(--white);
   padding: var(--space-4xl) 0;
   text-align: center;

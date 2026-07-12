@@ -2,7 +2,7 @@
 
 /* Hero — ink panel */
 .hero-explore {
-  background: var(--ink);
+  background: linear-gradient(rgba(32, 57, 74, 0.97), rgba(32, 57, 74, 0.516)), url('../images/working.jpeg') no-repeat center center / cover;
   color: var(--white);
   padding: var(--space-4xl) 0;
   min-height: 50vh;
@@ -11,7 +11,7 @@
 }
 
 .hero-explore .eyebrow {
-  color: var(--mute);
+  color: var(--signal);
 }
 
 .hero-explore h1 {
@@ -136,6 +136,11 @@
 
 .timeline-note strong {
   color: var(--ink);
+}
+
+#process {
+  background-color: var(--color-concrete);
+  transition: background-color 0.3s ease;
 }
 
 /* --- Winding Serpentine Timeline (Process) --- */
@@ -736,7 +741,41 @@
     gap: var(--space-sm);
   }
 
+  /* Responsive collapse for winding timeline on mobile */
+  .winding-timeline::before {
+    left: 20px;
+    transform: none;
+  }
 
+  .timeline-node {
+    min-height: auto;
+    padding-left: 50px;
+    margin-bottom: var(--space-lg);
+  }
+
+  .node-circle {
+    left: 20px;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 48px;
+    font-size: var(--text-sm);
+    border-width: 3px;
+  }
+
+  .timeline-node:hover .node-circle {
+    transform: translateX(-50%) scale(1.1);
+  }
+
+  .node-content {
+    width: 100%;
+    margin: 0 !important;
+    text-align: left !important;
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .timeline-node::before {
+    display: none !important;
+  }
 
   .pricing-grid {
     grid-template-columns: 1fr;

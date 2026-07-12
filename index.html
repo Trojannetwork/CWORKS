@@ -24,7 +24,6 @@
   <script defer src="assets/js/reveal.js"></script>
   <script defer src="assets/js/contact-form.js"></script>
   <script defer src="assets/js/text-pressure.js"></script>
-  <script defer src="assets/js/gradual-blur.js"></script>
   <script defer src="assets/js/magnet-lines.js"></script>
   <script type="module" src="assets/js/beams.js"></script>
 </head>
@@ -158,12 +157,12 @@
         <!-- Project 2 -->
         <article class="portfolio-card">
           <div class="portfolio-image-wrapper">
-            <img src="assets/images/work-designweek.jpg" alt="Kampala Design Week Website Mockup" loading="lazy" class="portfolio-img">
+            <img src="assets/images/work-waa.png" alt="What About Anime Website Mockup" loading="lazy" class="portfolio-img">
           </div>
           <div class="portfolio-content">
-            <span class="project-tags">Event &middot; Interactive &middot; Custom Motion</span>
-            <h3>Kampala Design Week 2026</h3>
-            <p>An immersive marketing site featuring fluid animations, custom schedules, and an interactive ticket checkout experience.</p>
+            <span class="project-tags">Community &middot; Design &middot; Development</span>
+            <h3>What About Anime</h3>
+            <p>An immersive community platform for East Africa's anime and gaming subculture, featuring custom watch-party schedules, event galleries, and interactive member profiles.</p>
           </div>
         </article>
 
@@ -221,7 +220,7 @@
   <!-- ==================== -->
   <!--  Why CWORKS / About  -->
   <!-- ==================== -->
-  <section class="section why-section reveal" id="about">
+  <section class="section why-section about-dark-section reveal" id="about">
     <div class="container">
       <span class="eyebrow">/ why us</span>
       <blockquote>
@@ -231,7 +230,7 @@
   </section>
 
   <!-- About body -->
-  <section class="section reveal">
+  <section class="section about-dark-section reveal">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">/ about</span>
@@ -257,88 +256,166 @@
         <p class="subhead">Small team, direct access — no account managers standing between you and the people building your site.</p>
       </div>
       <div class="team-grid">
-        <div class="team-card">
-          <div class="team-photo-container">
-            <img src="assets/images/team-ivan.jpg" alt="Ivan Kato - Founder & Lead Developer" loading="lazy" class="team-img">
+        <!-- Ivan -->
+        <div class="team-card" onclick="toggleTeamCard(this)">
+          <div class="team-card-img-wrap">
+            <div class="team-photo-container">
+              <img src="assets/images/team-ivan.jpg" alt="Ivan Kato - Founder & Lead Developer" loading="lazy" class="team-img">
+            </div>
+            <div class="team-overlay">
+              <div class="team-name-box">
+                <span class="team-name-badge">MEET IVAN &rarr;</span>
+              </div>
+            </div>
           </div>
-          <div class="team-info">
-            <div class="team-name">Ivan Kato</div>
-            <div class="team-role">Founder &amp; Lead Developer</div>
-            <p class="team-bio">Ivan handles the core codebase, optimization, and server configuration. He ensures your site loads fast, is extremely secure, and works on all viewports.</p>
+          <div class="team-details">
+            <button class="close-details-btn" onclick="closeTeamCard(event, this)">&times;</button>
+            <div class="details-content">
+              <span class="details-badge">Ivan Kato</span>
+              <div class="details-role">Founder &amp; Lead Developer</div>
+              <p class="details-bio">Ivan handles the core codebase, optimization, and server configuration. He ensures your site loads fast, is extremely secure, and works on all viewports.</p>
+            </div>
           </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo-container">
-            <img src="assets/images/team-sarah.jpg" alt="Sarah Namubiru - Lead Designer" loading="lazy" class="team-img">
+
+        <!-- Sarah -->
+        <div class="team-card" onclick="toggleTeamCard(this)">
+          <div class="team-card-img-wrap">
+            <div class="team-photo-container">
+              <img src="assets/images/team-sarah.jpg" alt="Sarah Namubiru - Lead Designer" loading="lazy" class="team-img">
+            </div>
+            <div class="team-overlay">
+              <div class="team-name-box">
+                <span class="team-name-badge">MEET SARAH &rarr;</span>
+              </div>
+            </div>
           </div>
-          <div class="team-info">
-            <div class="team-name">Sarah Namubiru</div>
-            <div class="team-role">Lead Designer</div>
-            <p class="team-bio">Sarah creates unique layouts, typography setups, and design systems from a blank canvas. She shapes how your users interact with your business online.</p>
+          <div class="team-details">
+            <button class="close-details-btn" onclick="closeTeamCard(event, this)">&times;</button>
+            <div class="details-content">
+              <span class="details-badge">Sarah Namubiru</span>
+              <div class="details-role">Lead Designer</div>
+              <p class="details-bio">Sarah creates unique layouts, typography setups, and design systems from a blank canvas. She shapes how your users interact with your business online.</p>
+            </div>
           </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo-container">
-            <img src="assets/images/team-moses.jpg" alt="Moses Mukasa - Client Relations & Operations" loading="lazy" class="team-img">
+
+        <!-- Moses -->
+        <div class="team-card" onclick="toggleTeamCard(this)">
+          <div class="team-card-img-wrap">
+            <div class="team-photo-container">
+              <img src="assets/images/team-moses.jpg" alt="Moses Mukasa - Client Relations & Operations" loading="lazy" class="team-img">
+            </div>
+            <div class="team-overlay">
+              <div class="team-name-box">
+                <span class="team-name-badge">MEET MOSES &rarr;</span>
+              </div>
+            </div>
           </div>
-          <div class="team-info">
-            <div class="team-name">Moses Mukasa</div>
-            <div class="team-role">Client Relations &amp; Operations</div>
-            <p class="team-bio">Moses manages our project schedules and is your main point of contact. He keeps communication clear and makes sure your launches run on time.</p>
+          <div class="team-details">
+            <button class="close-details-btn" onclick="closeTeamCard(event, this)">&times;</button>
+            <div class="details-content">
+              <span class="details-badge">Moses Mukasa</span>
+              <div class="details-role">Client Relations &amp; Operations</div>
+              <p class="details-bio">Moses manages our project schedules and is your main point of contact. He keeps communication clear and makes sure your launches run on time.</p>
+            </div>
           </div>
         </div>
 
         <!-- Placeholder slots for future team members -->
-        <div class="team-card team-card-placeholder">
-          <div class="team-photo-container placeholder-avatar">
-            <svg viewBox="0 0 24 24" fill="none" class="avatar-svg" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 20C4 16.69 7.58 14 12 14C16.42 14 20 16.69 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        <div class="team-card team-card-placeholder" onclick="toggleTeamCard(this)">
+          <div class="team-card-img-wrap">
+            <div class="team-photo-container placeholder-avatar">
+              <svg viewBox="0 0 24 24" fill="none" class="avatar-svg" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 20C4 16.69 7.58 14 12 14C16.42 14 20 16.69 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="team-overlay">
+              <div class="team-name-box">
+                <span class="team-name-badge">MEET MEMBER &rarr;</span>
+              </div>
+            </div>
           </div>
-          <div class="team-info">
-            <div class="team-name">[ Team Member 4 ]</div>
-            <div class="team-role">[ Role ]</div>
-            <p class="team-bio">[ Biography and responsibilities will be added here. ]</p>
-          </div>
-        </div>
-        <div class="team-card team-card-placeholder">
-          <div class="team-photo-container placeholder-avatar">
-            <svg viewBox="0 0 24 24" fill="none" class="avatar-svg" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 20C4 16.69 7.58 14 12 14C16.42 14 20 16.69 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="team-info">
-            <div class="team-name">[ Team Member 5 ]</div>
-            <div class="team-role">[ Role ]</div>
-            <p class="team-bio">[ Biography and responsibilities will be added here. ]</p>
+          <div class="team-details">
+            <button class="close-details-btn" onclick="closeTeamCard(event, this)">&times;</button>
+            <div class="details-content">
+              <span class="details-badge">[ Team Member 4 ]</span>
+              <div class="details-role">[ Role ]</div>
+              <p class="details-bio">[ Biography and responsibilities will be added here. ]</p>
+            </div>
           </div>
         </div>
-        <div class="team-card team-card-placeholder">
-          <div class="team-photo-container placeholder-avatar">
-            <svg viewBox="0 0 24 24" fill="none" class="avatar-svg" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 20C4 16.69 7.58 14 12 14C16.42 14 20 16.69 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+
+        <div class="team-card team-card-placeholder" onclick="toggleTeamCard(this)">
+          <div class="team-card-img-wrap">
+            <div class="team-photo-container placeholder-avatar">
+              <svg viewBox="0 0 24 24" fill="none" class="avatar-svg" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 20C4 16.69 7.58 14 12 14C16.42 14 20 16.69 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="team-overlay">
+              <div class="team-name-box">
+                <span class="team-name-badge">MEET MEMBER &rarr;</span>
+              </div>
+            </div>
           </div>
-          <div class="team-info">
-            <div class="team-name">[ Team Member 6 ]</div>
-            <div class="team-role">[ Role ]</div>
-            <p class="team-bio">[ Biography and responsibilities will be added here. ]</p>
+          <div class="team-details">
+            <button class="close-details-btn" onclick="closeTeamCard(event, this)">&times;</button>
+            <div class="details-content">
+              <span class="details-badge">[ Team Member 5 ]</span>
+              <div class="details-role">[ Role ]</div>
+              <p class="details-bio">[ Biography and responsibilities will be added here. ]</p>
+            </div>
           </div>
         </div>
-        <div class="team-card team-card-placeholder">
-          <div class="team-photo-container placeholder-avatar">
-            <svg viewBox="0 0 24 24" fill="none" class="avatar-svg" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4 20C4 16.69 7.58 14 12 14C16.42 14 20 16.69 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+
+        <div class="team-card team-card-placeholder" onclick="toggleTeamCard(this)">
+          <div class="team-card-img-wrap">
+            <div class="team-photo-container placeholder-avatar">
+              <svg viewBox="0 0 24 24" fill="none" class="avatar-svg" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 20C4 16.69 7.58 14 12 14C16.42 14 20 16.69 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="team-overlay">
+              <div class="team-name-box">
+                <span class="team-name-badge">MEET MEMBER &rarr;</span>
+              </div>
+            </div>
           </div>
-          <div class="team-info">
-            <div class="team-name">[ Team Member 7 ]</div>
-            <div class="team-role">[ Role ]</div>
-            <p class="team-bio">[ Biography and responsibilities will be added here. ]</p>
+          <div class="team-details">
+            <button class="close-details-btn" onclick="closeTeamCard(event, this)">&times;</button>
+            <div class="details-content">
+              <span class="details-badge">[ Team Member 6 ]</span>
+              <div class="details-role">[ Role ]</div>
+              <p class="details-bio">[ Biography and responsibilities will be added here. ]</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card team-card-placeholder" onclick="toggleTeamCard(this)">
+          <div class="team-card-img-wrap">
+            <div class="team-photo-container placeholder-avatar">
+              <svg viewBox="0 0 24 24" fill="none" class="avatar-svg" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 20C4 16.69 7.58 14 12 14C16.42 14 20 16.69 20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="team-overlay">
+              <div class="team-name-box">
+                <span class="team-name-badge">MEET MEMBER &rarr;</span>
+              </div>
+            </div>
+          </div>
+          <div class="team-details">
+            <button class="close-details-btn" onclick="closeTeamCard(event, this)">&times;</button>
+            <div class="details-content">
+              <span class="details-badge">[ Team Member 7 ]</span>
+              <div class="details-role">[ Role ]</div>
+              <p class="details-bio">[ Biography and responsibilities will be added here. ]</p>
+            </div>
           </div>
         </div>
       </div>
@@ -474,6 +551,43 @@
       <p class="tagline">Built in Kampala.</p>
     </div>
   </footer>
+
+  <!-- Team Details Toggle Script -->
+  <script>
+    function toggleTeamCard(cardElement) {
+      if (cardElement.classList.contains('expanded')) {
+        return;
+      }
+
+      const cards = document.querySelectorAll('.team-card');
+      cards.forEach(card => {
+        card.classList.remove('expanded', 'show-details');
+      });
+
+      cardElement.classList.add('expanded');
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          cardElement.classList.add('show-details');
+        });
+      });
+
+      setTimeout(() => {
+        cardElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 150);
+    }
+
+    function closeTeamCard(event, btnElement) {
+      event.stopPropagation();
+      const card = btnElement.closest('.team-card');
+      if (card) {
+        card.classList.remove('show-details');
+        setTimeout(() => {
+          card.classList.remove('expanded');
+        }, 350);
+      }
+    }
+  </script>
 
 </body>
 </html>
