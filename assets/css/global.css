@@ -7,7 +7,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   color: var(--ink);
-  background-color: #F5F4F0;
+  background-color: var(--paper);
 }
 
 /* --- Grainient Animated Background --- */

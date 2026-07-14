@@ -27,10 +27,20 @@
   <script defer src="assets/js/text-pressure.js"></script>
   <script defer src="assets/js/gradual-blur.js"></script>
   <script defer src="assets/js/magnet-lines.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script defer src="assets/js/team-modal.js"></script>
+  <script defer src="assets/js/loader.js"></script>
   <script type="module" src="assets/js/beams.js"></script>
   <script type="module" src="assets/js/grainient.js"></script>
 </head>
-<body>
+<body class="loading">
+
+  <!-- Website Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loader-text-container">
+      <h1 id="loader-text" class="loader-text">cworks</h1>
+    </div>
+  </div>
 
   <!-- Grainient animated background -->
   <div class="grainient-bg" data-grainient></div>
@@ -242,52 +252,64 @@
         <p class="subhead">Small team, direct access — no account managers standing between you and the people building your site.</p>
       </div>
       <div class="team-grid">
-        <div class="team-card">
-          <div class="team-photo">[ Photo ]</div>
+        <div class="team-card" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View Brian Kasingye's profile" data-index="0">
+          <div class="team-photo">
+            <img src="assets/images/team-brian.png" alt="Brian Kasingye">
+          </div>
           <div class="team-info">
-            <div class="team-name">[ Name ]</div>
+            <div class="team-name">Brian Kasingye</div>
             <div class="team-role">Founder &amp; Lead Developer</div>
-            <p class="team-bio">[ What they actually do day to day ]</p>
+            <p class="team-bio">Brian started CWORKS to build clean, fast, and custom web applications. He splits his time between client strategy and writing clean CSS and backend API integrations.</p>
           </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo">[ Photo ]</div>
+        <div class="team-card" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View Hope Kansiime's profile" data-index="1">
+          <div class="team-photo">
+            <img src="assets/images/team-hope.png" alt="Hope Kansiime">
+          </div>
           <div class="team-info">
-            <div class="team-name">[ Name ]</div>
-            <div class="team-role">[ Role ]</div>
-            <p class="team-bio">[ What they actually do day to day ]</p>
+            <div class="team-name">Hope Kansiime</div>
+            <div class="team-role">UI/UX Designer</div>
+            <p class="team-bio">Hope handles the design system, wireframes, and interactive prototypes. She makes sure every site we build is easy to navigate, responsive, and visually stunning.</p>
           </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo">[ Photo ]</div>
+        <div class="team-card" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View Derek Mugisha's profile" data-index="2">
+          <div class="team-photo">
+            <img src="assets/images/team-derek.png" alt="Derek Mugisha">
+          </div>
           <div class="team-info">
-            <div class="team-name">[ Name ]</div>
-            <div class="team-role">[ Role ]</div>
-            <p class="team-bio">[ What they actually do day to day ]</p>
+            <div class="team-name">Derek Mugisha</div>
+            <div class="team-role">Front-end Engineer</div>
+            <p class="team-bio">Derek translates Hope's designs into performant HTML, CSS, and JavaScript. He is obsessed with page speed, micro-animations, and full web accessibility.</p>
           </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo">[ Photo ]</div>
+        <div class="team-card" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View Fiona Nassolo's profile" data-index="3">
+          <div class="team-photo">
+            <img src="assets/images/team-fiona.png" alt="Fiona Nassolo">
+          </div>
           <div class="team-info">
-            <div class="team-name">[ Name ]</div>
-            <div class="team-role">[ Role ]</div>
-            <p class="team-bio">[ What they actually do day to day ]</p>
+            <div class="team-name">Fiona Nassolo</div>
+            <div class="team-role">Project Manager</div>
+            <p class="team-bio">Fiona keeps projects on track and ensures clear communication between clients and our engineering team. She oversees timelines, project scope, and quality assurance.</p>
           </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo">[ Photo ]</div>
+        <div class="team-card" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View Julius Kato's profile" data-index="4">
+          <div class="team-photo">
+            <img src="assets/images/team-julius.png" alt="Julius Kato">
+          </div>
           <div class="team-info">
-            <div class="team-name">[ Name ]</div>
-            <div class="team-role">[ Role ]</div>
-            <p class="team-bio">[ What they actually do day to day ]</p>
+            <div class="team-name">Julius Kato</div>
+            <div class="team-role">Full-Stack Developer</div>
+            <p class="team-bio">Julius focuses on database design, server-side APIs, and integrations. He makes sure our e-commerce sites and custom web apps run reliably at scale.</p>
           </div>
         </div>
-        <div class="team-card">
-          <div class="team-photo">[ Photo ]</div>
+        <div class="team-card" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View Aisha Nabakooza's profile" data-index="5">
+          <div class="team-photo">
+            <img src="assets/images/team-aisha.png" alt="Aisha Nabakooza">
+          </div>
           <div class="team-info">
-            <div class="team-name">[ Name ]</div>
-            <div class="team-role">[ Role ]</div>
-            <p class="team-bio">[ What they actually do day to day ]</p>
+            <div class="team-name">Aisha Nabakooza</div>
+            <div class="team-role">Content Strategist</div>
+            <p class="team-bio">Aisha helps clients define their brand voice and drafts clear, engaging copy for their sites. She also handles SEO optimization and metadata setups.</p>
           </div>
         </div>
       </div>
@@ -424,6 +446,29 @@
       </div>
     </div>
   </footer>
+
+  <!-- Team Modal Dialog -->
+  <div id="team-modal-overlay" class="team-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-member-name">
+    <div class="team-modal-content">
+      <button class="team-modal-close" aria-label="Close modal">&times;</button>
+      <div class="team-modal-inner">
+        <div class="team-modal-grid">
+          <div class="team-modal-photo-container">
+            <img id="modal-member-photo" src="" alt="" class="team-modal-photo">
+          </div>
+          <div class="team-modal-info">
+            <span class="eyebrow" id="modal-member-eyebrow">/ team member</span>
+            <h3 id="modal-member-name" class="team-modal-name"></h3>
+            <div id="modal-member-role" class="team-modal-role"></div>
+            <p id="modal-member-bio" class="team-modal-bio"></p>
+            <div class="team-modal-socials" id="modal-member-socials">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

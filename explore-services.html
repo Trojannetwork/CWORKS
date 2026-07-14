@@ -18,6 +18,7 @@
   <script defer src="assets/js/contact-form.js"></script>
   <script defer src="assets/js/accordion.js"></script>
   <script defer src="assets/js/pricing-select.js"></script>
+  <script defer src="assets/js/blueprint-timeline.js"></script>
 </head>
 <body>
 
@@ -112,56 +113,232 @@
   <!-- ==================== -->
   <!--  C — Our Process      -->
   <!-- ==================== -->
-  <section class="section reveal" id="process">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">/ how it works</span>
-        <h2>Our Process</h2>
-        <p class="subhead">A clear, collaborative workflow from first conversation to launch day.</p>
+  <section class="process-scroll-container" id="process">
+    <div class="process-sticky-wrapper">
+      
+      <!-- Blueprint Gridlines Background SVG -->
+      <svg class="blueprint-gridlines" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="blueprint-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(0, 240, 255, 0.04)" stroke-width="1.5" stroke-dasharray="4,4" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#blueprint-grid)" />
+      </svg>
+
+      <!-- Technical Drawing Title Block (Header) -->
+      <div class="blueprint-title-block">
+        <div class="title-block-grid">
+          <div class="title-block-section title-block-info">
+            <span class="eyebrow">/ how it works</span>
+            <h2>Our Process</h2>
+            <p class="subhead">A clear, collaborative workflow from first conversation to launch day.</p>
+          </div>
+          <div class="title-block-section title-block-metadata">
+            <div class="meta-row">
+              <div class="meta-col">
+                <span class="meta-label">DRAWING TYPE</span>
+                <span class="meta-value">SYSTEM WORKFLOW</span>
+              </div>
+              <div class="meta-col">
+                <span class="meta-label">REF NUMBER</span>
+                <span class="meta-value">CWORKS-FLOW-06</span>
+              </div>
+            </div>
+            <div class="meta-row">
+              <div class="meta-col">
+                <span class="meta-label">DRAWING SCALE</span>
+                <span class="meta-value" id="blueprint-scale-display">1:1.00</span>
+              </div>
+              <div class="meta-col">
+                <span class="meta-label">SYSTEM STATUS</span>
+                <span class="meta-value status-active">OPERATIONAL</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="timeline">
-        <div class="timeline-step">
-          <span class="step-marker">[ 01 ]</span>
-          <div class="step-content">
-            <h4>Discovery Call</h4>
-            <p>We sit down with you, in person or virtually, to understand what you need. We talk through your goals, your audience, any sites you like the look of, and your budget. This gives us everything we need to put together a solid proposal.</p>
+      <!-- Zoom/Pan Canvas Wrapper -->
+      <div class="blueprint-canvas-container">
+        <div class="blueprint-canvas" id="blueprint-canvas">
+          
+          <!-- Background Schematic Artwork & Connections -->
+          <svg class="blueprint-schematic" viewBox="0 0 1500 950" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#00f0ff" stroke-width="1.5" opacity="0.08">
+              <!-- Centerline -->
+              <line x1="100" y1="475" x2="1400" y2="475" stroke-dasharray="10,5" stroke-width="1" />
+              
+              <!-- Nose Cone (Right side) -->
+              <path d="M 1100 395 C 1200 395, 1260 435, 1300 475 C 1260 515, 1200 555, 1100 555 Z" fill="none" />
+              <path d="M 1180 422 C 1220 440, 1240 460, 1250 475 C 1240 490, 1220 510, 1180 528" fill="none" stroke-dasharray="3,3" />
+
+              <!-- Main Body (Cylinder) -->
+              <rect x="400" y="395" width="700" height="160" fill="none" />
+              
+              <!-- Ribs / Ring Frames -->
+              <line x1="500" y1="395" x2="500" y2="555" />
+              <line x1="600" y1="395" x2="600" y2="555" />
+              <line x1="700" y1="395" x2="700" y2="555" />
+              <line x1="800" y1="395" x2="800" y2="555" />
+              <line x1="900" y1="395" x2="900" y2="555" />
+              <line x1="1000" y1="395" x2="1000" y2="555" />
+              
+              <!-- Diagonal Internal Bracing -->
+              <line x1="400" y1="395" x2="500" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="500" y1="395" x2="400" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="500" y1="395" x2="600" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="600" y1="395" x2="500" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="600" y1="395" x2="700" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="700" y1="395" x2="600" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="700" y1="395" x2="800" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="800" y1="395" x2="700" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="800" y1="395" x2="900" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="900" y1="395" x2="800" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="900" y1="395" x2="1000" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="1000" y1="395" x2="900" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="1000" y1="395" x2="1100" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+              <line x1="1100" y1="395" x2="1000" y2="555" stroke-dasharray="4,4" stroke-width="1" />
+
+              <!-- Engine Dome -->
+              <path d="M 400 420 C 370 420, 370 530, 400 530 Z" fill="none" />
+              <line x1="370" y1="475" x2="400" y2="475" />
+              
+              <!-- Engine Nozzle -->
+              <path d="M 370 450 L 290 435 L 290 515 L 370 500 Z" fill="none" />
+              <path d="M 290 435 Q 330 475 290 515" fill="none" stroke-dasharray="2,2" />
+              
+              <!-- Fins -->
+              <path d="M 550 395 L 340 280 L 400 395 Z" fill="none" />
+              <path d="M 520 395 L 360 300" fill="none" stroke-dasharray="3,3" />
+              <path d="M 550 555 L 340 670 L 400 555 Z" fill="none" />
+              <path d="M 520 555 L 360 650" fill="none" stroke-dasharray="3,3" />
+
+              <!-- Internal Tanks -->
+              <circle cx="700" cy="475" r="70" stroke-dasharray="6,4" fill="none" />
+              <circle cx="900" cy="475" r="70" stroke-dasharray="6,4" fill="none" />
+
+              <!-- Circuit Traces -->
+              <path d="M 1100 475 L 1150 475 L 1180 505 L 1220 505" stroke-dasharray="2,2" />
+              <circle cx="1220" cy="505" r="3" fill="#00f0ff" />
+              <path d="M 1100 475 L 1150 475 L 1180 445 L 1220 445" stroke-dasharray="2,2" />
+              <circle cx="1220" cy="445" r="3" fill="#00f0ff" />
+              <path d="M 500 475 L 450 475 L 430 420 L 370 420" stroke-dasharray="2,2" />
+              <circle cx="370" cy="420" r="3" fill="#00f0ff" />
+
+              <!-- Dimensions and labels -->
+              <line x1="1200" y1="420" x2="1230" y2="340" />
+              <line x1="1230" y1="340" x2="1320" y2="340" />
+              <text x="1235" y="332" font-family="var(--font-mono)" font-size="10" fill="#00f0ff" letter-spacing="1">PAYLOAD &amp; AVIONICS</text>
+              
+              <line x1="900" y1="405" x2="930" y2="320" />
+              <line x1="930" y1="320" x2="1030" y2="320" />
+              <text x="935" y="312" font-family="var(--font-mono)" font-size="10" fill="#00f0ff" letter-spacing="1">STAGE-02 LH2 TANK</text>
+
+              <line x1="700" y1="405" x2="730" y2="320" />
+              <line x1="730" y1="320" x2="830" y2="320" />
+              <text x="735" y="312" font-family="var(--font-mono)" font-size="10" fill="#00f0ff" letter-spacing="1">STAGE-01 LOX TANK</text>
+              
+              <line x1="330" y1="495" x2="310" y2="600" />
+              <line x1="310" y1="600" x2="210" y2="600" />
+              <text x="215" y="592" font-family="var(--font-mono)" font-size="10" fill="#00f0ff" letter-spacing="1">THRUST NOZZLE [ST-01]</text>
+
+              <line x1="290" y1="710" x2="1300" y2="710" />
+              <line x1="290" y1="700" x2="290" y2="720" />
+              <line x1="1300" y1="700" x2="1300" y2="720" />
+              <text x="750" y="725" font-family="var(--font-mono)" font-size="11" fill="#00f0ff" text-anchor="middle" letter-spacing="1">DIMENSION REF: 18.25m (SYSTEM TOTAL)</text>
+            </g>
+
+            <!-- Flow Path Connecting the 6 steps -->
+            <g stroke="#00f0ff" stroke-width="2" fill="none" opacity="0.35">
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#00f0ff" />
+                </marker>
+              </defs>
+              
+              <path class="connection-path" d="M 250 275 H 750 H 1250 V 675 H 750 H 250" />
+              
+              <circle cx="250" cy="275" r="8" fill="#0b1226" stroke="#00f0ff" stroke-width="2" />
+              <circle cx="750" cy="275" r="8" fill="#0b1226" stroke="#00f0ff" stroke-width="2" />
+              <circle cx="1250" cy="275" r="8" fill="#0b1226" stroke="#00f0ff" stroke-width="2" />
+              <circle cx="1250" cy="675" r="8" fill="#0b1226" stroke="#00f0ff" stroke-width="2" />
+              <circle cx="750" cy="675" r="8" fill="#0b1226" stroke="#00f0ff" stroke-width="2" />
+              <circle cx="250" cy="675" r="8" fill="#0b1226" stroke="#00f0ff" stroke-width="2" />
+            </g>
+          </svg>
+
+          <!-- Step Cards Container -->
+          <div class="blueprint-steps">
+            
+            <!-- Step 01 -->
+            <div class="blueprint-step" data-step="1">
+              <div class="step-card-header">
+                <span class="step-num">[ 01 ]</span>
+                <h4>Discovery Call</h4>
+              </div>
+              <div class="step-card-body">
+                <p>We sit down with you, in person or virtually, to understand what you need. We talk through your goals, your audience, any sites you like the look of, and your budget. This gives us everything we need to put together a solid proposal.</p>
+              </div>
+            </div>
+            
+            <!-- Step 02 -->
+            <div class="blueprint-step" data-step="2">
+              <div class="step-card-header">
+                <span class="step-num">[ 02 ]</span>
+                <h4>Proposal &amp; Agreement</h4>
+              </div>
+              <div class="step-card-body">
+                <p>We send you a clear breakdown of scope, cost, and timeline. Once you're happy, we agree on payment terms and get the project officially started. No hidden fees, no surprises.</p>
+              </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="blueprint-step" data-step="3">
+              <div class="step-card-header">
+                <span class="step-num">[ 03 ]</span>
+                <h4>Design</h4>
+              </div>
+              <div class="step-card-body">
+                <p>We build out the visual direction of your site (layout, colours, fonts, and structure). You review and give feedback, and we refine until you sign off. Nothing moves to code until the design is approved.</p>
+              </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="blueprint-step" data-step="4">
+              <div class="step-card-header">
+                <span class="step-num">[ 04 ]</span>
+                <h4>Build</h4>
+              </div>
+              <div class="step-card-body">
+                <p>With the design locked in, we build your site. We share progress along the way and give you a preview link before the final review so you can see exactly how it looks and feels.</p>
+              </div>
+            </div>
+
+            <!-- Step 05 -->
+            <div class="blueprint-step" data-step="5">
+              <div class="step-card-header">
+                <span class="step-num">[ 05 ]</span>
+                <h4>Review &amp; Revisions</h4>
+              </div>
+              <div class="step-card-body">
+                <p>You go through the built site and tell us what you'd like adjusted. We work through the agreed revision rounds until everything is exactly as it should be.</p>
+              </div>
+            </div>
+
+            <!-- Step 06 -->
+            <div class="blueprint-step" data-step="6">
+              <div class="step-card-header">
+                <span class="step-num">[ 06 ]</span>
+                <h4>Launch &amp; Handover</h4>
+              </div>
+              <div class="step-card-body">
+                <p>We deploy the site, set up the domain, and make sure everything is live and working. You get the full source code, a walkthrough of the site, and a support window to handle anything post-launch.</p>
+              </div>
+            </div>
+
           </div>
-        </div>
-        <div class="timeline-step">
-          <span class="step-marker">[ 02 ]</span>
-          <div class="step-content">
-            <h4>Proposal &amp; Agreement</h4>
-            <p>We send you a clear breakdown of scope, cost, and timeline. Once you're happy, we agree on payment terms and get the project officially started. No hidden fees, no surprises.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <span class="step-marker">[ 03 ]</span>
-          <div class="step-content">
-            <h4>Design</h4>
-            <p>We build out the visual direction of your site (layout, colours, fonts, and structure). You review and give feedback, and we refine until you sign off. Nothing moves to code until the design is approved.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <span class="step-marker">[ 04 ]</span>
-          <div class="step-content">
-            <h4>Build</h4>
-            <p>With the design locked in, we build your site. We share progress along the way and give you a preview link before the final review so you can see exactly how it looks and feels.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <span class="step-marker">[ 05 ]</span>
-          <div class="step-content">
-            <h4>Review &amp; Revisions</h4>
-            <p>You go through the built site and tell us what you'd like adjusted. We work through the agreed revision rounds until everything is exactly as it should be.</p>
-          </div>
-        </div>
-        <div class="timeline-step">
-          <span class="step-marker">[ 06 ]</span>
-          <div class="step-content">
-            <h4>Launch &amp; Handover</h4>
-            <p>We deploy the site, set up the domain, and make sure everything is live and working. You get the full source code, a walkthrough of the site, and a support window to handle anything post-launch.</p>
-          </div>
+
         </div>
       </div>
     </div>
@@ -181,71 +358,71 @@
       </div>
 
       <div class="pricing-grid">
-        <!-- Starter -->
+        <!-- Basic -->
         <div class="pricing-card">
-          <h3>Starter Site</h3>
-          <p class="pricing-subtitle">One-time build</p>
-          <div class="pricing-price">UGX 350,000</div>
-          <div class="pricing-monthly">+ UGX 80,000 / month hosting</div>
-          <p class="pricing-desc">Perfect for individuals and small projects that need a clean, professional online presence without the complexity.</p>
+          <h3>Basic</h3>
+          <p class="pricing-subtitle">UGX 500,000</p>
+          <div class="pricing-price">2-3 Weeks</div>
+          <div class="pricing-monthly">Estimated Delivery Window</div>
+          <p class="pricing-desc">Perfect for landing pages and simple online flyers needing an immediate, highly polished presence.</p>
           <ul class="pricing-features">
-            <li>3 months free hosting included</li>
-            <li>Single-page website (up to 5 sections)</li>
-            <li>Mobile-responsive design</li>
-            <li>Basic contact form</li>
-            <li>Custom domain setup</li>
+            <li>Landing Page (Max 3 Pages)</li>
+            <li>1 year free hosting</li>
             <li>Up to 2 revision rounds</li>
-            <li>1-week delivery</li>
+            <li>Mobile Responsive Design</li>
+            <li>Contact Form</li>
+            <li>Custom Domain name setup</li>
+            <li>Domain/Hosting fee = 200,000/year (After 1 free year)</li>
           </ul>
-          <a href="#contact" class="btn btn-outline btn-large pricing-btn" data-tier="Starter">Get Started</a>
+          <a href="#contact" class="btn btn-outline btn-large pricing-btn" data-tier="Basic">Get Started</a>
         </div>
 
         <!-- Standard (Most Popular) -->
         <div class="pricing-card pricing-card--popular">
           <span class="popular-badge">Most Popular</span>
-          <h3>Standard Site</h3>
-          <p class="pricing-subtitle">One-time build</p>
-          <div class="pricing-price">UGX 750,000</div>
-          <div class="pricing-monthly">+ UGX 150,000 / month hosting</div>
-          <p class="pricing-desc">For businesses and creators who need a fully custom, multi-page site with proper hosting and a real domain.</p>
+          <h3>Standard</h3>
+          <p class="pricing-subtitle">UGX 750,000</p>
+          <div class="pricing-price">3 Wks - 1 Mo</div>
+          <div class="pricing-monthly">Estimated Delivery Window</div>
+          <p class="pricing-desc">Ideal for small businesses needing multiple pages, interactive details, and custom layouts.</p>
           <ul class="pricing-features">
-            <li>3 months free hosting included</li>
-            <li>Multi-page website (up to 5 pages)</li>
-            <li>Custom design &amp; animations</li>
-            <li>Mobile-responsive design</li>
-            <li>Contact form with email delivery</li>
-            <li>Basic SEO setup</li>
-            <li>Custom domain setup</li>
-            <li>Up to 3 revision rounds</li>
-            <li>2&ndash;3 week delivery</li>
+            <li>5 - 15 Pages</li>
+            <li>1 year free hosting</li>
+            <li>Up to 5 revision rounds</li>
+            <li>Mobile Responsive Design</li>
+            <li>Contact Form</li>
+            <li>Custom Domain name setup</li>
+            <li>Advance animation and interactions</li>
+            <li>Domain/Hosting fee = 350,000/year (After 1 free year)</li>
           </ul>
           <a href="#contact" class="btn btn-signal btn-large pricing-btn" data-tier="Standard">Get Started</a>
         </div>
 
-        <!-- Super -->
+        <!-- Premium -->
         <div class="pricing-card">
-          <h3>Super Site</h3>
-          <p class="pricing-subtitle">One-time build</p>
-          <div class="pricing-price">UGX 1,200,000</div>
-          <div class="pricing-monthly">+ UGX 250,000 / month hosting</div>
-          <p class="pricing-desc">For complex projects that demand advanced functionality, backend capability, and a fully configured server environment.</p>
+          <h3>Premium</h3>
+          <p class="pricing-subtitle">UGX 1,500,000 /= +</p>
+          <div class="pricing-price">TBD</div>
+          <div class="pricing-monthly">Timeline Agreed per Project</div>
+          <p class="pricing-desc">For complex corporate portals, CMS-driven setups, or functional e-commerce integrations.</p>
           <ul class="pricing-features">
-            <li>3 months free hosting included</li>
-            <li>Unlimited pages</li>
-            <li>Full custom design from scratch</li>
-            <li>Advanced animations &amp; interactions</li>
-            <li>Contact form with email delivery</li>
-            <li>Advanced SEO setup</li>
-            <li>Custom domain + SSL certificate</li>
-            <li>Priority support</li>
-            <li>Up to 5 revision rounds</li>
-            <li>Timeline agreed per project</li>
+            <li>Up to 30 Pages</li>
+            <li>1 year free hosting</li>
+            <li>Up to 7 revision rounds</li>
+            <li>Mobile Responsive Design</li>
+            <li>Contact Form</li>
+            <li>E-Commerce Integration</li>
+            <li>Chat Bot Integration</li>
+            <li>Custom Domain name setup</li>
+            <li>Advance animation and interaction</li>
+            <li>Content Management System (CMS)</li>
+            <li>Domain/Hosting fee = 500,000/year (After 1 free year)</li>
           </ul>
-          <a href="#contact" class="btn btn-outline btn-large pricing-btn" data-tier="Super">Get Started</a>
+          <a href="#contact" class="btn btn-outline btn-large pricing-btn" data-tier="Premium">Get Started</a>
         </div>
       </div>
 
-      <p class="pricing-footnote">All prices in UGX. 50% deposit to begin, balance due on launch. Hosting is free for the first 3 months — after that, billed monthly via Mobile Money.</p>
+      <p class="pricing-footnote">All prices in UGX, 30% down payment required to begin, balance due on launch</p>
     </div>
   </section>
 
@@ -284,9 +461,9 @@
             <label for="es-tier">Service Tier</label>
             <select id="es-tier" name="tier">
               <option value="" disabled selected>Select a tier…</option>
-              <option value="Starter">Starter</option>
+              <option value="Basic">Basic</option>
               <option value="Standard">Standard</option>
-              <option value="Super">Super</option>
+              <option value="Premium">Premium</option>
             </select>
           </div>
           <div class="form-group">

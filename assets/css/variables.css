@@ -2,11 +2,11 @@
 
 :root {
   /* Color */
-  --ink: #0B0B0C;
-  --paper: #F4F4F1;
-  --signal: #2727d5;
-  --line: #D9D9D4;
-  --mute: #6E6E72;
+  --ink: #0F172A;
+  --paper: #F8FAFC;
+  --signal: #6366F1;
+  --line: #A5B4FC;
+  --mute: #64748B;
   --white: #FFFFFF;
 
   /* Type scale */
