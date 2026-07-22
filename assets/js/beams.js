@@ -13,7 +13,7 @@ const cfg = {
   beamWidth: 2,
   beamHeight: 15,
   beamNumber: 12,
-  lightColor: '#ffffff',
+  lightColor: '#6196aa',
   speed: 2,
   noiseIntensity: 1.75,
   scale: 0.2,
@@ -252,7 +252,7 @@ const dirLight = new THREE.DirectionalLight(cfg.lightColor, 1);
 dirLight.position.set(0, 3, 10);
 scene.add(dirLight);
 
-const ambient = new THREE.AmbientLight(0xffffff, 1);
+const ambient = new THREE.AmbientLight(0x20394a, 2.0);
 scene.add(ambient);
 
 /* ---- Resize ---- */
@@ -275,10 +275,29 @@ resize();
 if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   renderer.render(scene, camera);
 } else {
+  let isHeroVisible = true;
+  let animId = null;
+
   function animate() {
-    requestAnimationFrame(animate);
     material.uniforms.time.value += 0.1 * 0.016;
     renderer.render(scene, camera);
   }
-  animate();
+
+  function tick() {
+    if (!isHeroVisible) {
+      animId = null;
+      return;
+    }
+    animate();
+    animId = requestAnimationFrame(tick);
+  }
+
+  const observer = new IntersectionObserver(([entry]) => {
+    isHeroVisible = entry.isIntersecting;
+    if (isHeroVisible && !animId) {
+      animId = requestAnimationFrame(tick);
+    }
+  }, { threshold: 0 });
+
+  observer.observe(canvasContainer);
 }

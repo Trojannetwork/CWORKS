@@ -1,13 +1,21 @@
 /* === CWORKS Design Tokens === */
 
 :root {
-  /* Color */
-  --ink: #0F172A;
-  --paper: #F8FAFC;
-  --signal: #6366F1;
-  --line: #A5B4FC;
-  --mute: #64748B;
+  /* Brand Color Palette */
+  --color-noir: #030706;      /* Noir - deep graphite black */
+  --color-denim: #20394a;     /* Denim - rich dark slate blue */
+  --color-bone: #f9f5ed;      /* Bone - elegant off-white */
+  --color-steel: #6196aa;     /* Steel - muted steel blue accent */
+  --color-concrete: #c9ccc3;  /* Concrete - soft warm gray */
   --white: #FFFFFF;
+
+  /* Global Mappings */
+  --ink: var(--color-noir);     /* Noir for main text */
+  --paper: var(--color-bone);   /* Bone for main background */
+  --signal: var(--color-steel); /* Steel for primary accent */
+  --line: rgba(32, 57, 74, 0.15); /* Denim border tint */
+  --mute: #505c66;              /* Muted blue-gray for secondary text */
+  --navy: var(--color-denim);   /* Denim for dark sections */
 
   /* Type scale */
   --text-xs: 0.75rem;    /* 12px */
